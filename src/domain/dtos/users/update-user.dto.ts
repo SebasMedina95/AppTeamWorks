@@ -6,6 +6,7 @@ export class UpdateUserDto {
         public readonly id: number,
         public readonly typeDocument: string,
         public readonly document: string,
+        public readonly email: string,
         public readonly fullName: string,
         public readonly status: boolean,
         public readonly createUserAt?: string,
@@ -20,6 +21,7 @@ export class UpdateUserDto {
             id,
             typeDocument,
             document,
+            email,
             fullName,
             status,
             createUserAt,
@@ -43,6 +45,10 @@ export class UpdateUserDto {
         if( !document ) return [`Número de Documento es requerido`, undefined];
         if( !regularExps.document.test(document) ) return [`Número de documento no es valido`, undefined];
 
+        //Email
+        if( !email ) return ['Email es requerido', undefined];
+        if( !regularExps.email.test(email) ) return [`Email no valido`, undefined];
+
         //Nombre Completo
         if( !fullName ) return [`Nombre Completo es requerido`];
         if( !regularExps.names.test(fullName) ) return [`Nombre Completo no es valido`, undefined];
@@ -51,6 +57,7 @@ export class UpdateUserDto {
             id,
             typeDocument,
             document,
+            email,
             fullName,
             status,
             createUserAt,

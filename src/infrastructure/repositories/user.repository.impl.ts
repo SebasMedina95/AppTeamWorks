@@ -21,6 +21,10 @@ export class UserRepositoryImpl implements UserRepository {
         return this.datasource.findOne(id);
     }
 
+    findOneByEmail(email: string): Promise<CustomError | UserEntity> {
+        return this.datasource.findOneByEmail(email);
+    }
+
     findAll(paginationDto: PaginationDto): Promise<CustomError | IUserPaginated | null> {
         return this.datasource.findAll(paginationDto);
     }

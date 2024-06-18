@@ -25,14 +25,14 @@ model tbl_test {
 }
 
 model TBL_USUARIO {
-  id           Int     @id @default(autoincrement())
-  typeDocument String  @db.VarChar(5)
-  document     String  @unique @db.VarChar(30)
-  fullName     String  @db.VarChar(500)
-  email        String  @unique @db.VarChar(150)
-  password     String  @db.VarChar(70)
+  id           Int       @id @default(autoincrement())
+  typeDocument String    @db.VarChar(5)
+  document     String    @unique @db.VarChar(30)
+  fullName     String    @db.VarChar(500)
+  email        String    @unique @db.VarChar(150)
+  password     String    @db.VarChar(70)
   role         Roles
-  status       Boolean @default(true)
+  status       Boolean   @default(true)
   createUserAt String?
   createDateAt DateTime?
   updateUserAt String?

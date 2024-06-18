@@ -20,10 +20,11 @@ export class UserRoutes {
         const userController = new UserController( userRepository );
 
         router.post('/create', userController.create);
-        router.get('/get-paginated', userController.findAll);
+        router.get('/get-all-paginated', userController.findAll);
         router.get('/get-by-id/:id', userController.findOne);
+        router.get('/get-by-email', userController.findOneByEmail)
         router.put('/update', userController.update);
-        router.delete('/delete/:id',userController.dalete);
+        router.delete('/delete/:id', userController.dalete);
 
         return router;
 

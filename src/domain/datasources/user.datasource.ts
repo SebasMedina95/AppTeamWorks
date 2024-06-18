@@ -10,6 +10,7 @@ export abstract class UserDataSource {
 
     abstract create(registerUserDto: RegisterUserDto): Promise<UserEntity | CustomError>;
     abstract findOne(id: number): Promise<UserEntity | CustomError>;
+    abstract findOneByEmail(email: string): Promise<UserEntity | CustomError>;
     abstract findAll(paginationDto: PaginationDto): Promise<IUserPaginated | CustomError | null>;
     abstract update(updateUserDto: UpdateUserDto): Promise<UserEntity | CustomError>;
     abstract dalete(id: number): Promise<UserEntity | CustomError>;
