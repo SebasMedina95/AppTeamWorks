@@ -24,11 +24,15 @@ export class Server {
   }
 
   async start() {
-    
 
     //* Middlewares
     this.app.use( express.json() ); // raw
     this.app.use( express.urlencoded({ extended: true }) ); // x-www-form-urlencoded
+    this.app.use(fileUpload({
+      limits: { fileSize: 50 * 1024 * 1024 },
+      useTempFiles : true,
+      tempFileDir : '/tmp/'
+    }));
 
     //*Para manejar la subida de archivos (FileUpload)
     this.app.use( fileUpload({

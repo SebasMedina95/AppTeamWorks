@@ -13,7 +13,28 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Roles {
+  USER
+  SUPER_USER
+  ADMIN
+}
+
 model tbl_test {
   id   Int    @id @default(autoincrement())
   name String @unique
+}
+
+model TBL_USUARIO {
+  id           Int     @id @default(autoincrement())
+  typeDocument String  @db.VarChar(5)
+  document     String  @unique @db.VarChar(30)
+  fullName     String  @db.VarChar(500)
+  email        String  @unique @db.VarChar(150)
+  password     String  @db.VarChar(70)
+  role         Roles
+  status       Boolean @default(true)
+  createUserAt String?
+  createDateAt DateTime?
+  updateUserAt String?
+  updateDateAt DateTime?
 }
