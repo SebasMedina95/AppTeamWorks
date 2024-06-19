@@ -1,16 +1,16 @@
 import { Request, Response } from 'express';
 
-import { UserRepository } from '../src/domain/repositories/user.repository';
-import { ApiResponse } from '../src/domain/utils/api-response';
-import { UserEntity } from '../src/domain/entities/users';
-import { CustomError } from '../src/domain/errors/custom.error';
-import { RegisterUserDto } from '../src/domain/dtos/users/register-user.dto';
-import { EResponseCodes } from '../src/constants/api-codes';
-import { SearchUserByIdDto } from '../src/domain/dtos/users/search-id-user.dto';
-import { SearchUserByEmailDto } from '../src/domain/dtos/users/search-email-user.dto';
-import { PaginationDto } from '../src/domain/dtos/common/pagination.dto';
-import { UpdateUserDto } from '../src/domain/dtos/users/update-user.dto';
-import { IUserPaginated } from '../src/interfaces/user.interface';
+import { UserRepository } from '../../src/domain/repositories/user.repository';
+import { ApiResponse } from '../../src/domain/utils/api-response';
+import { UserEntity } from '../../src/domain/entities/users';
+import { CustomError } from '../../src/domain/errors/custom.error';
+import { RegisterUserDto } from '../../src/domain/dtos/users/register-user.dto';
+import { EResponseCodes } from '../../src/constants/api-codes';
+import { SearchUserByIdDto } from '../../src/domain/dtos/users/search-id-user.dto';
+import { SearchUserByEmailDto } from '../../src/domain/dtos/users/search-email-user.dto';
+import { PaginationDto } from '../../src/domain/dtos/common/pagination.dto';
+import { UpdateUserDto } from '../../src/domain/dtos/users/update-user.dto';
+import { IUserPaginated } from '../../src/interfaces/user.interface';
 
 //? ******************************************************************************** ?//
 //? ******************************************************************************** ?//
